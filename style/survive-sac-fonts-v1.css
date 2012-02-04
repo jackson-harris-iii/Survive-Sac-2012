@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700italic,400,700);
+
+#wrapper h1
+{
+	font-family: 'Open Sans', Verdana, sans-serif !important;
+	font-size: 190%;
+}
+
+b, strong
+{
+	font-weight: 700;
+}
+
+body, input, textarea, select, h2, h3, h4, h5, h6, p, span, b, i, strong, article, header, footer, nav
+{
+	text-indent: 0;
+	font-family: 'Open Sans', Verdana, sans-serif !important;
+}

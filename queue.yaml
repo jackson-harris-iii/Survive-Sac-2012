@@ -1,0 +1,15 @@
+total_storage_limit: 120M
+queue:
+- name: notify
+  rate: 100/s
+  retry_parameters:
+      min_backoff_seconds: 2
+      max_backoff_seconds: 10
+      max_doublings: 2
+
+- name: mail
+  rate: 2000/d
+  retry_parameters:
+      min_backoff_seconds: 25
+      max_backoff_seconds: 140
+      max_doublings: 5

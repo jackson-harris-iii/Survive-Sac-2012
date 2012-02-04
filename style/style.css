@@ -1,0 +1,131 @@
+/* import fonts */
+@font-face {
+  font-family: 'TwentyEightDays';
+  src: url('fonts/28dayslater.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FourB';
+  src: url('fonts/04b_03.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* resets */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+q,
+ol,
+ul,
+li,
+fieldset,
+form,
+table,
+tr,
+th,
+td,
+textarea,
+input,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* global */
+html {
+  height: 100%;
+}
+body {
+  background-color: #000;
+}
+a {
+  text-decoration: none;
+}
+/* page elements */
+#wrapper {
+  margin: 0;
+  padding: 0;
+}
+#countdown {
+  width: 80%;
+  padding-top: 20%;
+  margin: auto;
+}
+#timer {
+  font-family: TwentyEightDays;
+  color: #f00;
+  font-size: 12em;
+}
+div .timer {
+  font-family: TwentyEightDays;
+  color: red;
+  font-size: 12em;
+  margin: 0;
+  width: 25%;
+  height: 40%;
+  float: left;
+  text-align: center;
+}
+#register, #info, #footer {
+  position: absolute;
+}
+a #register, a #info {
+  font-family: FourB;
+  font-size: 2.5em;
+  border: 3px #000 solid;
+  color: #f00;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2em;
+}
+a #register:hover, a #info:hover {
+  border: 3px red solid;
+}
+a #register:active, a #info:active {
+  background-color: #f00;
+  color: #000;
+}
+#register {
+  left: 20px;
+  bottom: 20px;
+}
+#info {
+  right: 20px;
+  bottom: 20px;
+}
+#footer {
+  font-family: FourB;
+  color: #333;
+  font-size: 0.5em;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+#footer a {
+  color: #555;
+  text-decoration: underline;
+}

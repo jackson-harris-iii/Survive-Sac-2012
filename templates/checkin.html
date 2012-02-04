@@ -1,0 +1,12 @@
+{% extends "__gdbase.html" %}
+
+{% block header %}CHECK IN PLAYER{% endblock %}
+
+{% block content %}
+<form action="{{ link('checkin') }}" method="post">
+	<input type="text" name="player_number" id="player_number" data-required="true" placeholder="player #"><br>
+	<input type="text" name="checkpoint" id="checkpoint" data-required="true" placeholder="checkpoint"><br>
+	<input type="text" name="dt" id="dt" data-required="true" placeholder="date/time"><br>
+	<input type="submit" class="button" value="check in">
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "__base.html" %}
+
+{% block meta %}{% endblock %}
+
+{% block title %} <TMD> Survive Event Countdown {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="style/style.css" media="screen"/>
+{% endblock %}
+
+{% block script %}    
+    <script type="text/javascript" src="js/countdown.js"></script>
+{% endblock %}
+
+{% block heading %}{% endblock %}
+
+{% block body %}
+<body onload="javascript:countdown('timer', 'day', 'hour', 'min', 'sec');">
+    <div id="wrapper">  
+     
+        <div id="countdown">
+            <div id="timer">
+                <div class="timer" id="day"></div>
+                <div class="timer" id="hour"></div>
+                <div class="timer" id="min"></div>
+                <div class="timer" id="sec"></div>
+            </div>
+        </div>
+
+        <a href="http://www.survivesacramento.com/register">
+            <span id="register">PLAY</span>
+        </a>
+        <a href="http://www.survivesacramento.com/info">
+            <span id="info">?</span>
+        </a>
+        <div id="footer">
+            content &copy; &laquo;TMD&raquo; 2012. design by <a href="http://momentum.io">momentum</a>. 
+        </div>
+
+    </div>
+</body>
+{% endblock %}
+

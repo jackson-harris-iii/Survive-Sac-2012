@@ -1,0 +1,43 @@
+{% extends "__gdbase.html" %}
+
+{% block title %}player stats{% if player %} - {{ player.key().id() }}{% endif %}{% endblock title %}
+
+{% block heading %}Player Stats{% if player %}<h2>ID: {{ player.key().id() }}</h2>{% endif %}{% endblock %}
+
+{% block content %}
+
+{% if notice %}
+
+	<div id='notice' class='error'>
+		<span id='error'>{{ error }}</span>
+	</div>
+
+{% endif %}
+
+<div id='form'>
+	<form action="{{ link('lookup-player') }}" method='get'>
+		<input name='pid' placeholder='player number (e.g. 12345)' type='text' /><br>
+		<input type='submit' class="button" value='locate' />
+	</form>
+</div>
+
+<div id='player_details'>
+{% if player %}
+
+	<div id='player'>
+		<ul>
+			<li><b>Player Name: </b>{{ player.name }}</li>
+			<li><b>Player Email: </b>{{ player.email }}</li>
+		</ul>
+	</div>
+	
+{% else %}
+
+	<div id='noplayer'>
+		<b>Please enter a player ID and click "Locate" to show their information.</b>
+	</div>
+
+{% endif %}
+</div>
+
+{% endblock %}

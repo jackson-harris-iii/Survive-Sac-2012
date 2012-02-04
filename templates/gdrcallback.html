@@ -1,0 +1,12 @@
+{% extends "__gdbase.html" %}
+
+{% block header %}CHECK IN PLAYER{% endblock %}
+
+{% block content %}
+
+Success! You have registered or checked-in player number {{ player }} at {{ dt }}. <br><br>
+<form action="/checkin" method="get">
+<input type="submit" class="button blue" value="another checkin">
+</form>
+
+{% endblock %}

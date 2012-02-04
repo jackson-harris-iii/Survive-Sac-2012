@@ -1,0 +1,61 @@
+{% extends "__base.html" %}
+
+{% block title %}Confirming your Survive Sacramento ticket order...{% endblock %}
+
+{% block heading %}CONFIRMATION{% endblock %}
+
+{% block headerscript %}
+<link rel="stylesheet" href="{{ cdn }}/style/survive-sac-animations-v1.css" />
+<style type="text/css">
+#wrapper {
+	margin-top: 15em!important;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!--
+<div id='regprogress'>
+	
+	<div id='regWrapper'>
+		<div id='step1' class='step completed'>
+			<span class='iconbox checkbox'>Register</span>
+		</div>
+		<div id='step2' class='step completed'>
+			<span class='iconbox checkbox'>Donate</span>
+		</div>
+
+		<div id='step3' class='step current'>
+			<span id='confirm_status' class='iconbox arrowbox'>Confirming...</span>
+		</div>
+	
+		<div class='clearboth'></div>
+			
+	</div>
+	
+	<div class='clearboth'></div>
+	
+	<div id='leftshoe' class='floatleft shoe'></div>	
+	<div id='rightshoe' class='floatright shoe activated'></div>
+
+</div>
+<div class="container">
+	<ul id="progress">
+	    <li><div id="layer1" class="ball"></div><div id="layer7" class="pulse"></div></li>
+	    <li><div id="layer2" class="ball"></div><div id="layer8" class="pulse"></div></li>
+	    <li><div id="layer3" class="ball"></div><div id="layer9" class="pulse"></div></li>
+	    <li><div id="layer4" class="ball"></div><div id="layer10" class="pulse"></div></li>
+	    <li><div id="layer5" class="ball"></div><div id="layer11" class="pulse"></div></li>
+    </ul>
+</div>
+-->
+<div id='confirmationPane'>
+	<h2>THANKS {{ first_name }}!</h2>
+	<br />
+	<p>You have successfully registered as a player in Survive Sacramento 2011 [REVISITED]. Your efforts will help us maintain control of the zombie population spreading throughout our city.</p>
+	<p>Confirmation has been sent to {{ email }}. Future information about the game, including game specifics and previews of game surprises, will be posted on the <a href="http://www.facebook.com/event.php?eid=233349916727304" target="_blank">Facebook event</a> page.</p>
+	<p>We thank you for putting your life on the line once again to help stop the Outbreak and making this game a reality.</p>
+	<p>See you at the briefing,</p>
+	<p style="margin-left: 100px">- &laquo;TMD&raquo</p>
+</div>
+{% endblock %}

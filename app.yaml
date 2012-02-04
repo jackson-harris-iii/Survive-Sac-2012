@@ -1,0 +1,39 @@
+application: survive-sac
+version: beta-3
+runtime: python
+api_version: 1
+
+handlers:
+- url: /style
+  static_dir: style
+  expiration: 365d
+  mime_type: text/css
+  
+- url: /img
+  static_dir: img
+
+- url: /js
+  static_dir: js
+  expiration: 365d
+  mime_type: text/javascript
+
+- url: /static
+  static_dir: static
+
+- url: /mapreduce(/.*)?
+  script: mapreduce/main.py
+  login: admin
+
+- url: /(robots\.txt|humans\.txt|crossdomain\.xml|favicon\.ico)
+  static_files: static/\1
+  upload: static/(.*)
+  expiration: "0m"
+
+- url: /(.*\.(appcache|manifest))
+  mime_type: text/cache-manifest
+  static_files: static/appcache/\1
+  upload: static/(.*\.(appcache|manifest))
+  expiration: "0m"
+
+- url: /.*
+  script: teammacdown.py

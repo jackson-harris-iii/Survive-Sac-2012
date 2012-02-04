@@ -1,0 +1,16 @@
+{% extends "__gdbase.html" %}
+
+{% block header %}REGISTER NEW PLAYER{% endblock %}
+
+{% block content %}
+{% if register %}
+<h2>Registered player <b>{{ player_number }}</b>.</h2><br><br>
+{% endif %}
+{% if fail %}<h2 style="color:red">Registration failed</h2><br><br>{% endif %}
+<form action="{{ link('gamedayreg') }}" method="post">
+	<input type="text" name="name" id="name" data-required="true" placeholder="name"><br>
+	<input type="text" name="email" id="email" data-require="true" placeholder="email"><br>
+	<input type="text" name="age" id="age" data-required="true" placeholder="age"><br>
+	<input type="submit" class="button" value="register">
+</form>
+{% endblock %}

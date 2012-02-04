@@ -1,0 +1,14 @@
+{% extends "__gdbase.html" %}
+
+{% block header %}PLAYER CONVERTED{% endblock %}
+
+{% block content %}
+{% if register %}
+<h2>Converted player <b>{{ player_number }}</b>.</h2><br><br>
+{% endif %}
+{% if fail %}<h2 style="color:red">Conversion failed</h2><br><br>{% endif %}
+<form action="{{ link(convert-player) }}" method="post">
+	<input type="text" name="email" id="email" data-require="true" placeholder="email"><br>
+	<input type="submit" class="button" value="convert">
+</form>
+{% endblock %}

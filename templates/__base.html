@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        {% block meta %}
+        <!-- Meta-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <meta name="author" content="Momentum Labs <momentum.io>">
+        <meta name="description" content="Live action halloween zombie tag in Downtown Sacramento. Second year running!">
+        <meta name="keywords" content="zombie,game,sacramento,sac,survive sac,survive sacramento,2011,halloween,tmd,momentum,team mac down,tmd group,group,momentum studios,momentum labs,labs">
+
+        <meta property="og:title" content="SurviveSac" />
+        <meta property="og:type" content="activity" />
+        <meta property="og:url" content="http://www.survivesacramento.com" />
+        <meta property="og:image" content="http://www.survivesacramento.com/static/tmd_logo.jpeg" />
+        <meta property="og:site_name" content="SurviveSacramento" />
+        <meta property="fb:app_id" content="242878385764668" />
+        {% endblock %}
+        
+        <title>{% block title %}SurviveSac - TMD{% endblock %}</title>
+
+        {% block style %}
+        <link rel="stylesheet" type="text/css" href="style/survive-sac-v3.css" />
+        <link rel="stylesheet" type="text/css" href="style/survive-sac-fonts-v1.css" /> 
+        {% endblock %}
+
+        {% block script %}
+        <script src="{{ cdn }}/js/jquery.core.js" type="text/javascript"></script>
+        <script src="https://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+        <script src="{{ cdn }}/js/modernizr.js"></script>
+        <script type='text/javascript'>
+        
+            Modernizr.load([
+            
+                {
+                    test: JSON.parse,
+                    nope: "/js/compat/json2.js"
+                },
+                
+                {
+                    test: jQuery,
+                    nope: ["{{ cdn }}/js/jquery.core.js"],
+                    load: ["{{ cdn }}/js/jquery.base.js"]
+                },
+                
+                {
+                    test: Modernizr.cssanimations || Modernizr.csstransitions,
+                    yep: ["{{ cdn }}/js/jquery.css3animate.js"]
+                },
+                
+                {
+                    test: Modernizr.localstorage || Modernizr.sessionstorage,
+                    yep: ["{{ cdn }}/js/tmd.html5.js"]
+                },
+            
+                {% block asyncloader %}
+                {% endblock %}
+            ]);
+        
+        </script>
+        {% endblock %}
+
+        {% block headerscript %}
+        {% endblock %}
+
+    </head>
+    
+    {% block body %}
+    <body>
+        <div id="fb-root"></div>
+        <div id='main'>
+            
+            {% if alert %}
+                <div id='alert' class='{{ alert_type }}'><h2>{{ alert }}</h2></div>
+            {% endif %}
+            
+            <div id="wrapper">
+                {% block heading %}<h1></h1>{% endblock %}
+                
+                {% block content %}{% endblock %}
+                
+            </div>
+            
+            <div id="infoFooter"><a href="/info" target="_blank">what's all this?</a></div>
+        
+        </div>
+        
+        {% if not user.is_admin %}
+            <script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25133943-4']);
+              _gaq.push(['_setDomainName', '.survivesacramento.com']);
+            {% if source %}
+              _gaq.push(['_setCustomVar', 1, 'source', '{{ source }}', 1]);
+            {% endif %}
+            {% if medium %}
+              _gaq.push(['_setCustomVar', 2, 'medium', '{{ medium }}', 1]);
+            {% endif %}
+            {% if location %}
+              _gaq.push(['_setCustomVar', 3, 'location', '{{ location }}', 1]);
+            {% endif %}
+            {% if group %}
+              _gaq.push(['_setCustomVar', 4, 'group', '{{ group }}', 1]);
+            {% endif %}
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+        {% endif %}
+        
+        {% block checkout_analytics %}{% endblock %}
+
+        <!--[if lt IE 7 ]>
+            <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+            <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+        <![endif]-->
+    </body>
+    {% endblock %}
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "__base.html" %}
+
+{% block title %}Success! You have been registered for SurviveSacramento 2011{% endblock %}
+
+{% block heading %}SUCCESS{% endblock %}
+
+{% block content %}
+<div class="container">
+	<ul id="progress">
+    <li><div id="layer1" class="ball"></div><div id="layer7" class="pulse"></div></li>
+    <li><div id="layer2" class="ball"></div><div id="layer8" class="pulse"></div></li>
+    <li><div id="layer3" class="ball"></div><div id="layer9" class="pulse"></div></li>
+    <li><div id="layer4" class="ball"></div><div id="layer10" class="pulse"></div></li>
+    <li><div id="layer5" class="ball"></div><div id="layer11" class="pulse"></div></li>
+    </ul>
+	<a class="trigger" href="#">Start/Restart Animation</a>
+</div>
+
+<p>You have successfully registered player <strong>{{ fullname }}</strong> in Survive Sacramento 2011: Outbreak. Confirmation has been sent to the email address you gave us.</p>
+<p>Future information about the game, including game specifics and previews of game surprises, will be sent via email, and on Facebook if you chose to connect.</p>
+<p>Thanks for making this game a reality, and we'll see you at the briefing.</p>
+<p style="margin-left: 50px">- &laquo;TMD&raquo
+{% endblock %}

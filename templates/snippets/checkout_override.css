@@ -1,0 +1,41 @@
+<style>
+  .override #googlecart-widget-head {
+    background: #222; color: white;
+  }
+  .override #googlecart-arrow,
+  .override #googlecart-title,
+  .override #googlecart-summary
+  {
+    color: white;
+  }
+  #googlecart-widget-spacer
+  {
+	width: 300px !important;
+  }
+  .override #googlecart-widget-body,
+  .override #googlecart-widget-list,
+  .override .googlecart-widget-item,
+  .override .googlecart-widget-quantity-column,
+  .override .googlecart-widget-quantity-box,
+  .override .googlecart-widget-details-column,
+  .override .googlecart-widget-title,
+  .override .googlecart-widget-short-details,
+  .override .googlecart-widget-removed-message,
+  .override .googlecart-widget-image-column,
+  .override .googlecart-widget-img,
+  .override .googlecart-widget-price-column,
+  .override .googlecart-widget-price,
+  .override .googlecart-widget-remove,
+  .override .googlecart-widget-restore,
+  .override #googlecart-widget-emptymessage,
+  .override .googlecart-widget-footertext,
+  .override .googlecart-widget-totalmessage,
+  .override .googlecart-widget-totalprice,
+  .override .googlecart-widget-disclaimer
+  {
+    background: black; opacity: 0.8; color: white;
+  }
+  .override .googlecart-widget-checkout {
+    background: black;
+  }
+</style>

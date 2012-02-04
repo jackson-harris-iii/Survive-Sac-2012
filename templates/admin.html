@@ -1,0 +1,12 @@
+{% extends "__gdbase.html" %}
+
+{% block heading %}TMD ADMIN PANEL{% endblock %}
+
+{% block content %}
+<p><form action="{{ link('convert-player') }}" method="get"><input type="submit" class="button" value="look up preregistration" /></form></p>
+<p><form action="{{ link('gamedayreg') }}" method="get"><input type="submit" class="button" value="register player" /></form></p>
+<p><form action="{{ link('checkin') }}" method="get"><input type="submit" class="button" value="check player in" /></form></p>
+<p><form action="{{ link('lookup-player') }}" method="get"><input type="submit" class="button" value="player stats" /></form></p>
+<p><form action="{{ link('create-event') }}" method="get"><input type="submit" class="button" value="create event" /></form></p>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+mapreduce:
+- name: Generate Player Stats
+  mapper:
+    input_reader: mapreduce.input_readers.DatastoreInputReader
+    handler: teammacdown.generate_player_stats
+    params:
+    - name: entity_kind
+      default: teammacdown.CheckIn

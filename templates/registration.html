@@ -1,0 +1,97 @@
+{% extends "__base.html" %}
+
+{% block title %}Live action halloween zombie tag in Downtown Sacramento, SECOND YEAR RUNNING - HALLOWEEN 2011{% endblock %}
+
+{% block heading %}REGISTRATION{% endblock %}
+
+{% block headerscript %}
+	{% include "snippets/fancyjs.js" %}
+	{% include "snippets/checkout_override.css" %}
+{% endblock %}
+
+{% block asyncloader %}
+	{
+		load: ["{{ cdn }}/js/jquery.plugins.js",  "{{ cdn }}/style/survive-sac-plugins-v1.css"],
+		complete: function () {
+
+			var $panels = $('#regform #scroller .formstep');
+
+			$panels.css({
+			    'float' : 'left',
+			    'position' : 'relative' // IE fix to ensure overflow is hidden
+			  });
+
+			var $container = $('#regform #scroller');
+			var $scroll = $('#regform #scroller').css('overflow', 'hidden');
+		
+			$container.css({width: ($panels[0].offsetWidth * $panels.length)+25});
+		
+			initPage();
+		}
+	},
+{% endblock %}
+
+{% block content %}
+
+{# Registration Form #}
+<div id='regform'>
+	<div id='scroller'>
+		<div id='registrationStep' class='formstep'>
+			<div class='formsection'>
+				<div id='facebook' class='center'>
+					<div id='facebookLogin'>
+						<h2>SURVIVE: [REVISITED]<br>DECEMBER 3, 2011</h2>
+					</div>
+				</div>
+				<div id="regformwrap">
+				<form id='regFormAction' action="/_register" method="post">
+					<div id='nameField'>
+						<input id='name' type="text" name="full_name" placeholder="full name" value='full name' data-required='true' required />
+					</div>
+					<div id='emailField'>
+						<input id='email' type="email" name="email" placeholder="email" value='email' data-required='true' required />
+					</div>
+					<div id='ageField'>
+						<input id='age' type="text" name="age" placeholder="age" value='age' data-required='true' />
+					</div>
+					<div id='referField'>
+						<textarea name="refer" id="refer" rows="6" placeholder="how did you hear about Survive Sac?">how did you hear about Survive Sac?</textarea>
+					</div>
+					<div id='lastgameField'>
+						<p>did you attend the last survive sac?</p>
+						<span>
+							<select name='lastgame'>
+								<option value='no'>No</option>
+								<option value='yes'>Yes</option>
+							</select>
+						</span>
+					</div>
+					<div id='smartphoneField'>
+						<p>do you own a smartphone?</p>
+						<select name='smartphone'>
+							<option value='no'>No</option>
+							<option value='iphone'>Yes - Apple</option>
+							<option value='android'>Yes - Android</option>
+							<option value='blackberry'>Yes - BlackBerry</option>
+							<option value='windows'>Yes - Windows</option>
+							<option value='other'>Yes - Other</option>
+						</select>
+					</div>		
+
+					<hr />
+					<input id='registerSubmit' class='submit disabled' type='submit' value='Next ->' disabled />
+					<input type='hidden' name='event' id='event' value='ag1zfnN1cnZpdmUtc2FjcisLEghUTURFdmVudCIdc3Vydml2ZXNhYy1vdXRicmVhay1yZXZpc2l0ZWQM' />
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% block checkout_analytics %}
+<script src="http://checkout.google.com/files/digital/ga_post.js"
+  type="text/javascript">
+</script>
+{% endblock %}
